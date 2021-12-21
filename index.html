@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Simple Calender</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+<style type="text/css">
+	
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}	
+
+body{
+	padding: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #00ff00;
+}
+
+.head {
+    width: 475px;
+    height: 100px;
+    background: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.bigT {
+	background: #ffd480;
+	border-radius: 30px ;
+    width: 475px;
+    height: 400px;
+}
+
+.smallT {
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: 900;
+}
+
+.days{
+      font-size: 20px;
+      font-family: cursive;
+      color: #cc0000;
+      font-size: 25px ;
+}
+
+.today { 
+    text-align: center;
+    border-radius: 10px;
+    background: red;
+}
+
+
+@media (max-width: 500px) {
+.head {
+    width: 350px;
+    height: 70px;
+    background: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.bigT {
+    background: #ffd480;
+    border-radius: 30px ;
+    width: 350px;
+    height: 300px;
+
+}
+  .days{
+      font-size: 20px;
+      font-family: cursive;
+      color: #cc0000;
+      font-size: 12px ;
+}  
+}
+
+</style>
+</head>
+
+<body>
+	
+ <div class="Digital">
+ 	
+ <div class="head">
+
+       <div > <i class="fa fa-angle-left" style="font-size:36px"></i> </div>
+               <div > <h1>January 2021</h1> </div>
+                  <div> <i class="fa fa-angle-right" style="font-size:36px"></i>
+                     </div>
+                       </div>
+  
+    <table class="bigT" align="center" 
+        cellspacing="21" cellpadding="21">
+        <thead class="days">
+            <tr>
+                <th > Sun</th>
+                <th >Mon</th>
+                <th >Tue</th>
+                <th >Wed</th>
+                <th >Thu</th>
+                <th >Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+  
+        <tbody class="smallT">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+           
+            <tr>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td class="today">29</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+ </div>
+
+<script type="text/javascript">
+    
+const date = new Date();
+
+const rendercalender = ()=>{
+
+}
+
+const monthsdays = document.querySelector( "#days")
+
+const lastdate = new Date(date.getFullYear(), date.getMonth() + 1, 0 ).getDate() ;
+
+const prevLastdate = new Date(date.getFullYear(), date.getMonth(), 0 ).getDate() ;
+    
+const firstDayIdex = date.getDay() 
+
+const lastDayIndex = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() ;
+
+const nextday = 7-lastDayIndex-1; 
+
+const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December   "
+];
+
+document.querySelector(".date h1").innerhtml= months  [date.getmonths()];
+
+let days = " ";
+
+
+for ( let i=1; i <=31; i++){
+    days =+ `<div>${i}</div>`;monthsDays.innerHTML= smallT
+}
+
+
+
+document.querySelector(".prev-date").addEventListener("click",() => {
+    date.setMonth(date.getMonth() - 1);
+    rendercalender ();
+})
+
+document.querySelector(".next-date").addEventListener("click",() => {
+    date.setMonth(date.getMonth() + 1);
+    rendercalender ();
+})
+
+rendercalender();
+
+</script>
+</body>
+
+</html>
+
